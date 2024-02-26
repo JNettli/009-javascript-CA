@@ -15,11 +15,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #cefeff;
+    background-color: #c1c1ff;
     height: 84px;
     padding: 0 32px;
-    border-bottom: 2px solid #c1c1ff;
     margin-bottom: 32px;
+}
+
+.logo {
+    cursor: pointer;
 }
 
 header ul {
@@ -28,14 +31,109 @@ header ul {
     list-style: none;
 }
 
+header li {
+    cursor: pointer;
+}
+
 .header-right {
     display: flex;
     gap: 16px;
+    cursor: pointer;
+}
+
+.addToCart {
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+}
+
+.addToCart p {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 0.9rem;
+    background-color: red;
+    color: white;
+    margin: 0;
+    padding: 2px 7px;
+    border-radius: 50%;
+}
+
+.cartBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    transition: .3s linear;
+    transform: scale(0);
+}
+
+.cartBox.active {
+    transform: scale(1);
+}
+
+.cartBox .cart {
+    position: relative;
+    height: 50%;
+    width: 50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cartBox .cart .closeCart {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: red;
+    padding: 12px 32px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.cartBox .cart .closeCart:hover {
+    background-color: #FF0000a5;
+}
+
+.cartBox .cart h1 {
+    position: relative;
+    margin-top: 2%;
+    font-size: 3rem;
+    color: #58a3ff;
+}
+
+.cart table {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.cart button {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    padding: 16px 32px;
+    border: none;
+    background-color: rgb(49, 255, 49);
+    font-weight: bold;
+}
+.cart button:hover {
+    background-color: rgb(100, 255, 100);
 }
 
 .sorter {
     border-bottom: 1px solid black;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
     width: 80%;
 }
 
@@ -57,6 +155,16 @@ header ul {
     transition: ease-in-out 0.2s;
 }
 
+.single-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 16px;
+}
+
 .card:hover {
     cursor: pointer;
     box-shadow: grey 0 0 0.5rem;
@@ -74,16 +182,31 @@ header ul {
     justify-content: space-between;
 }
 
+.emptyDiv {
+    width: 50px;
+}
+
+.addCart {
+    width: 104px;
+    height: 32px;
+    background-color: #58a3ff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
 .price {
     font-size: 1.2rem;
     font-weight: 600;
+    display: flex;
+    justify-content: space-between;
 }
 
 .dashedPrice {
     text-decoration: line-through;
 }
 
-#discounted {
+.discounted {
     text-decoration: none;
     font-size: 1.2rem;
     color: red;
